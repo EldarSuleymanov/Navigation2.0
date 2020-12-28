@@ -30,11 +30,11 @@ const IconStack = ({navigation, route}) => {
           <Text style={styles.calcText}>Calculator</Text>
         </View>
 
-        {/* <View style={styles.container}>
+        <View style={styles.container}>
           <TouchableOpacity
             style={styles.calcIcon}
             onPress={() => {
-              navigation.navigate('Calculator');
+              navigation.navigate('Nothing');
             }}>
             <Image
               style={{width: '100%', height: 150, resizeMode: 'contain'}}
@@ -42,7 +42,7 @@ const IconStack = ({navigation, route}) => {
             />
           </TouchableOpacity>
           <Text style={styles.calcText}>Something else</Text>
-        </View> */}
+        </View>
       </View>
     </>
   );

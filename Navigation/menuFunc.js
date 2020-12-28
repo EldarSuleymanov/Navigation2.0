@@ -1,19 +1,5 @@
-import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Text, View, TouchableOpacity, StyleSheet, Image} from 'react-native';
-
-// const Menu = (props) => {
-//   return (
-//     <View style={{flexDirection: 'row', flex: 0.1, backgroundColor: 'grey'}}>
-//       <TouchableOpacity
-//         style={styles.container}
-//         onPress={() => props.navigation.toggleDrawer()}>
-//         <Text>Menu</Text>
-//       </TouchableOpacity>
-//       <Text style={styles.text}>Navigation App</Text>
-//     </View>
-//   );
-// };
 
 const Menu = ({navigation, route}) => {
   return (
