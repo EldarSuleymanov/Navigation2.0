@@ -1,8 +1,7 @@
 import React from 'react';
 import {Text, ScrollView} from 'react-native';
 import {connect} from 'react-redux';
-import ImageCard from '../../Components';
-import {FavoriteAdd} from '../../redux/actions';
+import ImageCard from '../../Components/ImageCard';
 
 const FavoriteScreen = ({data1, route}) => {
   const temp = data1.map((item, index) => (
@@ -13,7 +12,9 @@ const FavoriteScreen = ({data1, route}) => {
       {temp.length ? (
         temp
       ) : (
-        <Text>There is no favorite movies in this list</Text>
+        <Text style={{padding: 20, textAlign: 'center', fontWeight: 'bold'}}>
+          There is no favorite movies in this list
+        </Text>
       )}
     </ScrollView>
   );

@@ -15,20 +15,20 @@ const MyDrawer = (props) => {
     <>
       <Drawer.Navigator
         drawerStyle={{
-          backgroundColor: 'red',
+          backgroundColor: 'darkgrey',
           borderTopRightRadius: 50,
           borderBottomRightRadius: 50,
-          padding: 50,
+          padding: 25,
         }}
         drawerContentOptions={{
           labelStyle: {
-            fontSize: 16,
-            textAlign: 'center',            
+            fontSize: 18,
+            textAlign: 'center',
             fontWeight: 'bold',
           },
-          activeTintColor: 'midnightblue',
-          inactiveTintColor: 'skyblue',
-          activeBackgroundColor: 'yellow',
+          activeTintColor: 'black',
+          inactiveTintColor: '#afbf1d',
+          activeBackgroundColor: '#97ed02',
           inactiveBackgroundColor: 'green',
           itemStyle: {
             marginVertical: 20,
