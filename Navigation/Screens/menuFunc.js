@@ -7,7 +7,7 @@ const Menu = ({navigation, route}) => {
       <TouchableOpacity
         style={styles.container}
         onPress={() => navigation.toggleDrawer()}>
-        <Image style ={{width:"100%", height: "100%", flex:1}} source = {require("../images/pokemol.jpeg")}/>
+        <Image style ={{width:"100%", height: "100%", flex:1}} source = {require("../../images/pokemol.jpeg")}/>
       </TouchableOpacity>
       <Text style={styles.text}>{route?.name}</Text>
     </View>

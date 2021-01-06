@@ -1,7 +1,6 @@
 import React from 'react';
-import {Text, TouchableOpacity} from 'react-native';
-import Menu from '../../menuFunc';
 import {WebView} from 'react-native-webview';
+import Menu from '../menuFunc';
 
 const WebviewStack = ({navigation, route}) => {
   return (

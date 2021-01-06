@@ -1,8 +1,8 @@
 import React from 'react';
 import {createStackNavigator, HeaderTitle} from '@react-navigation/stack';
-import CalcStack from './calc';
-import IconStack from './iconsTool';
-import NothingStack from '../entertain/nothing';
+import CalcStack from './Screens/tools/calc';
+import NothingStack from './Screens/entertain/nothing';
+import IconStack from './Screens/tools/iconsTool';
 
 const Stack = createStackNavigator();
 

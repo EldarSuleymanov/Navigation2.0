@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, TouchableOpacity, StyleSheet, View,Image} from 'react-native';
-import Menu from '../../menuFunc';
+import Menu from '../menuFunc';
 
 const link = require('../../../images/rainbow3.jpg');
 const link2 = require('../../../images/icon.png');
