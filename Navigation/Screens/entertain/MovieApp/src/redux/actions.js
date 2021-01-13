@@ -12,23 +12,7 @@ export const errorActionCreator = (message) => {
   };
 };
 
-export const asyncFuncThunk = (url, search) => {
-  return function (dispatch) {
-    return fetch(url + search)
-      .then((data) => data.json())
-      .then((array) => {
-        if (array.length) {
-          dispatch(DataActionCreator(array));
-          dispatch(errorActionCreator(''));
-        } else {
-          dispatch(errorActionCreator('there is no such movie'));
-        }
-      })
-      .catch((e) => {
-        dispatch(errorActionCreator('Something went wrong, try again later'));
-      });
-  };
-};
+
 
 export const DataActionCreator = (array) => {
   return {
@@ -48,5 +32,12 @@ export const FavoriteDeleted = (movie) => {
   return {
     type: 'FAVORITE_DELETE',
     payload: movie,
+  };
+};
+
+export const WatcherWatching = (parametr) => {
+  return {
+    type: 'WATCHER_WATCHING',
+    payload: parametr,
   };
 };

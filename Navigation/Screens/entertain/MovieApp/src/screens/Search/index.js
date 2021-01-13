@@ -11,7 +11,10 @@ import {connect} from 'react-redux';
 import {Header} from '../../Components';
 import ImageCard from '../../Components/ImageCard';
 
-import {asyncFuncThunk, inputActionCreator} from '../../redux/actions';
+import {
+  inputActionCreator,
+  WatcherWatching,
+} from '../../redux/actions';
 // import {ImageCard, Header} from '../../Components';
 import {styles} from './styles';
 
@@ -20,24 +23,12 @@ class SearchScreen extends Component {
     super(props);
   }
 
-  async componentDidMount() {
-    await this.Method('Spider Man');
+  componentDidMount() {
+    this.Method('Spider Man');
   }
 
   Method = async (par) => {
-    // try {
-    // const response = await fetch(this.props.url1 + par);
-    // const array = await response.json();
-
-    // if (array.length) {
-    // this.setState({data: array});
-    this.props.asyncFunc1(this.props.url1, par);
-    //   } else {
-    //     this.props.errorFunc1('there is no such movie');
-    //   }
-    // } catch (e) {
-    //   this.props.errorFunc1('Something went wrong, try again later');
-    // }
+    this.props.asyncFunc1(par);
   };
 
   onChangeText(text) {
@@ -45,7 +36,7 @@ class SearchScreen extends Component {
   }
 
   Search = async (str) => {
-    await this.Method(str);
+    this.Method(str);
     Keyboard.dismiss();
   };
 
@@ -101,12 +92,8 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(inputActionCreator(text));
     },
 
-    // errorFunc1: (message) => {
-    //   dispatch(errorActionCreator(message));
-    // },
-
-    asyncFunc1: (url, search) => {
-      dispatch(asyncFuncThunk(url, search));
+    asyncFunc1: (search) => {
+      dispatch(WatcherWatching(search));
     },
   };
 };
