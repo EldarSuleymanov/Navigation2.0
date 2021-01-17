@@ -4,6 +4,7 @@ const initialState = {
   errorMessage: '',
   url: 'http://api.tvmaze.com/search/shows?q=',
   data: [],
+  loadingTrigger: false,
 };
 
 export const searchReducer = (state = initialState, action) => {
@@ -22,6 +23,11 @@ export const searchReducer = (state = initialState, action) => {
       return {
         ...state,
         data: action.payload,
+      };
+    case 'TRIGGER_CHANGE':
+      return {
+        ...state,
+        loadingTrigger: action.payload,
       };
     default:
       return state;

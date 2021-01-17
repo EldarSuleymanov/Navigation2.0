@@ -3,6 +3,8 @@ import {persistStore, persistReducer} from 'redux-persist';
 import AsyncStorage from '@react-native-community/async-storage';
 import {searchReducer} from './searchReducer';
 import {favoriteReducer} from './favoriteReducer';
+import {splashReducer} from './SplashReducer';
+import {netReducer} from './netReducer';
 
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './saga';
@@ -12,9 +14,14 @@ const sagaMiddleware = createSagaMiddleware();
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  blacklist: ['searchReducer'],
+  blacklist: ['searchReducer', 'splashReducer', 'netReducer'],
 };
-const rootReducer = combineReducers({searchReducer, favoriteReducer});
+const rootReducer = combineReducers({
+  searchReducer,
+  favoriteReducer,
+  splashReducer,
+  netReducer,
+});
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

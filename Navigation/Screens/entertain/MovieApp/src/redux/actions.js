@@ -41,3 +41,24 @@ export const WatcherWatching = (parametr) => {
     payload: parametr,
   };
 };
+
+export const Splash = (parametr) => {
+  return {
+    type: 'SPLASH',
+    payload: parametr,
+  };
+};
+
+export const netActionCreator = (parametr) => {
+  return {
+    type: 'IS_NET_EXIST',
+    payload: parametr,
+  };
+};
+
+export const loadingTriggerActionCreator = (parametr) => {
+  return {
+    type: 'TRIGGER_CHANGE',
+    payload: parametr,
+  };
+};

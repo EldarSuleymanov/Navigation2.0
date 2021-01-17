@@ -8,13 +8,11 @@ import {
   Keyboard,
 } from 'react-native';
 import {connect} from 'react-redux';
+import Loading from '../../../../../../animation/loadingScreen';
 import {Header} from '../../Components';
 import ImageCard from '../../Components/ImageCard';
 
-import {
-  inputActionCreator,
-  WatcherWatching,
-} from '../../redux/actions';
+import {inputActionCreator, WatcherWatching} from '../../redux/actions';
 // import {ImageCard, Header} from '../../Components';
 import {styles} from './styles';
 
@@ -41,7 +39,14 @@ class SearchScreen extends Component {
   };
 
   render() {
-    const {title1, searchText1, errorMessage1, data1} = this.props;
+    const {
+      title1,
+      searchText1,
+      errorMessage1,
+      data1,
+      loadingTrigger,
+    } = this.props;
+    console.log('loading trigger', loadingTrigger);
     const isMovieExist =
       errorMessage1 !== '' ? (
         <Text style={{backgroundColor: 'red'}}>{errorMessage1}</Text>
@@ -70,7 +75,13 @@ class SearchScreen extends Component {
         </View>
 
         <ScrollView>
-          <View style={styles.container}>{isMovieExist}</View>
+          <>
+            {loadingTrigger ? (
+              <Loading />
+            ) : (
+              <View style={styles.container}>{isMovieExist}</View>
+            )}
+          </>
         </ScrollView>
       </View>
     );
@@ -84,6 +95,7 @@ const mapStateToProps = (state) => {
     errorMessage1: state.searchReducer.errorMessage,
     url1: state.searchReducer.url,
     data1: state.searchReducer.data,
+    loadingTrigger: state.searchReducer.loadingTrigger,
   };
 };
 const mapDispatchToProps = (dispatch) => {
