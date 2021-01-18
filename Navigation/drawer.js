@@ -1,24 +1,21 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import EntertainmentStack from './EntertainStack';
 import ToolStaack from './ToolsStack';
 import TabStack from './AboutTab';
 import WebviewStack from './Screens/news/webview';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import SplashScreen from './animation/splashScreen';
-import {Provider, useDispatch} from 'react-redux';
 import NetInfo from '@react-native-community/netinfo';
 import {netActionCreator} from './Screens/entertain/MovieApp/src/redux/actions';
 import {AppState} from 'react-native';
 
-// import {createStackNavigator} from '@react-navigation/stack';
-// const Stack = createStackNavigator();
-
 const Drawer = createDrawerNavigator();
 let NetInfoSubscriprion = null;
 
-const MyDrawer = (props) => {
+const MyDrawer = () => {
   const triger = useSelector((state) => state.splashReducer.trigger);
+  console.log("triger", triger)
   const dispatch = useDispatch();
   const connectChange = (state) => {
     dispatch(netActionCreator(state.isInternetReachable));

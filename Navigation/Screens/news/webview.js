@@ -14,7 +14,7 @@ const WebviewStack = ({navigation, route}) => {
           if (netConnection) {
             alert('there is a problem in loading newspage. Try again');
           } else {
-            alert('there is a problem in loading newspage. Try again');
+            alert('something went wrong');
           }
         }}
         renderLoading={() => <Loading />}

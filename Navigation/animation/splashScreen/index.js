@@ -44,11 +44,14 @@ class SplashScreen extends Component {
       createAnimation(this.animatedValue3, 1000, Easing.bounce, 3000),
       createAnimation(this.animatedValue5, 1000, Easing.bounce, 4000),
       startScaleAnimation(),
-    ]).start(() => this.props.changeTriger());
+    ]).start(() =>
+      
+        this.props.changeTriger(false)
+     
+    );
   }
 
   render() {
-    console.log('pro', this.props);
     const animatedStyle = this.animatedValue.interpolate({
       inputRange: [1, 2],
       outputRange: [1, 2],
@@ -107,11 +110,7 @@ class SplashScreen extends Component {
     const opacityChange4 = this.animatedValue4.interpolate({
       inputRange: [1, 2],
       outputRange: [0.2, 1],
-    });
-    const opacityChange5 = this.animatedValue5.interpolate({
-      inputRange: [0, 1],
-      outputRange: [0, 1],
-    });
+    });   
 
     const rotateY = this.animatedValue4.interpolate({
       inputRange: [1, 1.5, 2],
@@ -180,7 +179,7 @@ class SplashScreen extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    changeTriger: () => dispatch(Splash(false)),
+    changeTriger: (bool) => dispatch(Splash(bool)),
   };
 };
 
