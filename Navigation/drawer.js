@@ -20,8 +20,8 @@ const MyDrawer = () => {
   const connectChange = (state) => {
     dispatch(netActionCreator(state.isInternetReachable));
   };
-  const appState = useRef(AppState.currentState);
 
+  const appState = useRef(AppState.currentState);
   useEffect(() => {
     //zamena mount
     AppState.addEventListener('change', _handleAppStateChange);

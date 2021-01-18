@@ -6,7 +6,7 @@ export const netReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'IS_NET_EXIST':
       return {
-        ...state,
+        ...state, 
         netConnection: action.payload,
       };
     default:

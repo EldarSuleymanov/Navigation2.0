@@ -17,7 +17,7 @@ const WebviewStack = ({navigation, route}) => {
             alert('something went wrong');
           }
         }}
-        renderLoading={() => <Loading />}
+        onLoadStart={() => <Loading />}
         source={{
           uri: 'https://www.day.az/',
         }}

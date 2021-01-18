@@ -6,7 +6,6 @@ import {
 } from './actions';
 
 const asyncFunc = (url, search) => {
-  
   return fetch(url + search)
     .then((data) => data.json())
     .then((array) => array)
@@ -23,7 +22,7 @@ const asyncFunc = (url, search) => {
 // };
 
 function* worker({payload}) {
-  try {
+  try { 
     yield put(loadingTriggerActionCreator(true));
     const sel = yield select((state) => state.netReducer.netConnection);
     if (sel) {
