@@ -45,9 +45,9 @@ class SplashScreen extends Component {
       createAnimation(this.animatedValue5, 1000, Easing.bounce, 4000),
       startScaleAnimation(),
     ]).start(() =>
-      
-        this.props.changeTriger(false)
-     
+      setTimeout(() => {
+        this.props.changeTriger(false);
+      }, 100),
     );
   }
 

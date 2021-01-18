@@ -8,14 +8,14 @@ import {useSelector, useDispatch} from 'react-redux';
 import SplashScreen from './animation/splashScreen';
 import NetInfo from '@react-native-community/netinfo';
 import {netActionCreator} from './Screens/entertain/MovieApp/src/redux/actions';
-import {AppState} from 'react-native';
+import {Alert, AppState} from 'react-native';
 
 const Drawer = createDrawerNavigator();
 let NetInfoSubscriprion = null;
 
 const MyDrawer = () => {
   const triger = useSelector((state) => state.splashReducer.trigger);
-  console.log("triger", triger)
+  console.log('triger', triger);
   const dispatch = useDispatch();
   const connectChange = (state) => {
     dispatch(netActionCreator(state.isInternetReachable));
@@ -37,7 +37,7 @@ const MyDrawer = () => {
       appState.current.match(/inactive|background/) &&
       nextAppState === 'active'
     ) {
-      alert('Welcome back');
+      Alert.alert('', 'Welcome back');
     }
 
     appState.current = nextAppState;
