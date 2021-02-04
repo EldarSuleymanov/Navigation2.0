@@ -4,10 +4,8 @@ import {Text} from 'react-native';
 const NothingStack = ({navigation, route}) => {
   return (
     <>
-            <Text>There will be new aplication in the future</Text>      
+      <Text>There will be new aplication in the future</Text>
     </>
   );
 };
 export default NothingStack;
-
-

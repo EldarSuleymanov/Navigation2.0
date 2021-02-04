@@ -44,9 +44,9 @@ const MyDrawer = () => {
   };
   return (
     <>
-      {triger ? (
+      {triger ? 
         <SplashScreen />
-      ) : (
+       : 
         <Drawer.Navigator
           drawerStyle={{
             backgroundColor: 'darkgrey',
@@ -73,7 +73,7 @@ const MyDrawer = () => {
           <Drawer.Screen name="Tools" component={ToolStaack} />
           <Drawer.Screen name="About me" component={TabStack} />
         </Drawer.Navigator>
-      )}
+      }
     </>
   );
 };

@@ -13,7 +13,6 @@ import {Header} from '../../Components';
 import ImageCard from '../../Components/ImageCard';
 import {inputActionCreator} from '../../redux/search/actions';
 import {WatcherWatching} from '../../saga/actions';
-// import {ImageCard, Header} from '../../Components';
 import {styles} from './styles';
 
 class SearchScreen extends Component {
@@ -49,7 +48,7 @@ class SearchScreen extends Component {
     console.log('loading trigger', loadingTrigger);
     const isMovieExist =
       errorMessage1 !== '' ? (
-        <Text style={{backgroundColor: 'red'}}>{errorMessage1}</Text>
+        <Text style={styles.error}>{errorMessage1}</Text>
       ) : (
         data1.map((item, index) => (
           <ImageCard data={item} key={index} rootName={this.props.route.name} />
@@ -57,7 +56,7 @@ class SearchScreen extends Component {
       );
 
     return (
-      <View style={{flex: 1, backgroundColor: '#99917c'}}>
+      <View style={styles.mainView}>
         <Header title={title1} />
         <View style={styles.row}>
           <TextInput

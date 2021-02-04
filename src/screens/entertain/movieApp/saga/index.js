@@ -1,4 +1,4 @@
-import {takeEvery, put, call, fork, select} from 'redux-saga/effects';
+import {takeEvery, put, call, select} from 'redux-saga/effects';
 import {
   DataActionCreator,
   errorActionCreator,
@@ -22,7 +22,7 @@ const asyncFunc = (url, search) => {
 // };
 
 function* worker({payload}) {
-  try { 
+  try {
     yield put(loadingTriggerActionCreator(true));
     const sel = yield select((state) => state.netReducer.netConnection);
     if (sel) {

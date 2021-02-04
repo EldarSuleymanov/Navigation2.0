@@ -1,7 +1,8 @@
 import React from 'react';
 import {Text, ScrollView} from 'react-native';
-import {connect, useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 import ImageCard from '../../Components/ImageCard';
+import {styles} from './styles';
 
 const FavoriteScreen = ({route}) => {
   const data1 = useSelector((state) => state.favoriteReducer.data);
@@ -10,12 +11,12 @@ const FavoriteScreen = ({route}) => {
     <ImageCard data={item} key={index} rootName={route.name} />
   ));
   return (
-    <ScrollView style={{backgroundColor: 'grey'}}>
+    <ScrollView style={styles.scrolView}>
       {temp.length ? (
         temp
       ) : (
-        <Text style={{padding: 20, textAlign: 'center', fontWeight: 'bold'}}>
-          There is no favorite movies in this list
+        <Text style={styles.text}>
+          There is no favorite movies in this list.
         </Text>
       )}
     </ScrollView>

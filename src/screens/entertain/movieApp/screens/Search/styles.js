@@ -25,4 +25,11 @@ export const styles = StyleSheet.create({
     fontSize: 30,
     backgroundColor: '#dedae3',
   },
+  mainView: {
+    flex: 1,
+    backgroundColor: '#99917c',
+  },
+  error: {
+    backgroundColor: 'red',
+  },
 });

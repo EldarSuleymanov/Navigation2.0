@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Animated, View, Easing, Text, TouchableOpacity} from 'react-native';
+import {Animated, View, Easing} from 'react-native';
 import {connect} from 'react-redux';
 import {styles} from './styles';
 import {Splash} from '../../modules/redux/splash/actions';
